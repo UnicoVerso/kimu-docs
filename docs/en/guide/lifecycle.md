@@ -2,7 +2,6 @@
 
 Understanding the lifecycle of a component is essential for building robust and maintainable extensions and UI elements in KIMU-CORE.
 
-
 ## Lifecycle Phases
 
 1. **Creation**
@@ -25,7 +24,6 @@ Understanding the lifecycle of a component is essential for building robust and 
    - When the component is removed from the DOM, cleanup hooks (e.g., `onDestroy`, `disconnectedCallback`) are called.
    - Resources, listeners, and timers are released.
 
-
 ## Example Lifecycle Hooks
 
 ```typescript
@@ -38,25 +36,3 @@ class MyComponent extends KimuComponentElement {
   connectedCallback() {
     super.connectedCallback();
     // Called when added to the DOM
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    // Called when removed from the DOM
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    // React to attribute changes
-  }
-}
-```
-
-
-## Best Practices
-
-- Use lifecycle hooks to manage resources, listeners, and side effects.
-- Avoid heavy logic in constructors; prefer `connectedCallback` or `onInit`.
-- Always clean up in `disconnectedCallback` or `onDestroy` to prevent memory leaks.
-
-
-For more details, see the [Main Components](./architecture.md#main-components) section or explore the source code in `core/kimu-component-element.ts`.

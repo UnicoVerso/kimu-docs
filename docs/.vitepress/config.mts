@@ -2,20 +2,93 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'en-US',
-  title: "Kimu-Docs",
-  description: "Keep It Minimal UI Framework",
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en-US',
+      link: '/en/',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/en/' },
+          { text: 'Guide', link: '/en/guide/' },
+          { text: 'Examples', link: '/en/examples/' }
+        ],
+        sidebar: [
+          {
+            text: 'Guide',
+            items: [
+              { text: 'Introduction', link: '/en/guide/index' },
+              { text: 'Get Started', link: '/en/guide/get-started' },
+              { text: 'Architecture', link: '/en/guide/architecture' },
+              { text: 'Life Cycle', link: '/en/guide/lifecycle' },
+              { text: 'Configuration', link: '/en/guide/configuration' },
+              { text: 'Extensions', link: '/en/guide/extensions' },
+              { text: 'Modules', link: '/en/guide/modules' },
+              { text: 'Helpers & Services', link: '/en/guide/helpers' },
+              { text: 'API Reference', link: '/en/guide/api' },
+              { text: 'FAQ', link: '/en/guide/faq' },
+              { text: 'Next Steps', link: '/en/guide/next-steps' },
+              { text: 'Community', link: '/en/guide/community' },
+              { text: 'Author and Contact', link: '/en/guide/about' }
+            ]
+          },
+          {
+            text: 'Examples',
+            items: [
+              { text: 'Markdown Examples', link: '/en/examples/markdown-examples' },
+              { text: 'Runtime API Examples', link: '/en/examples/api-examples' }
+            ]
+          }
+        ]
+      }
+    },
+    it: {
+      label: 'Italiano',
+      lang: 'it-IT',
+      link: '/it/',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/it/' },
+          { text: 'Guida', link: '/it/guide/' },
+          { text: 'Esempi', link: '/it/examples/' }
+        ],
+        sidebar: [
+          {
+            text: 'Guida',
+            items: [
+              { text: 'Introduzione', link: '/it/guide/index' },
+              { text: 'Inizia', link: '/it/guide/get-started' },
+              { text: 'Architettura', link: '/it/guide/architecture' },
+              { text: 'Ciclo di Vita', link: '/it/guide/lifecycle' },
+              { text: 'Configurazione', link: '/it/guide/configuration' },
+              { text: 'Estensioni', link: '/it/guide/extensions' },
+              { text: 'Moduli', link: '/it/guide/modules' },
+              { text: 'Helpers & Servizi', link: '/it/guide/helpers' },
+              { text: 'Riferimento API', link: '/it/guide/api' },
+              { text: 'FAQ', link: '/it/guide/faq' },
+              { text: 'Prossimi Passi', link: '/it/guide/next-steps' },
+              { text: 'Community', link: '/it/guide/community' },
+              { text: 'Autore e Contatti', link: '/it/guide/about' }
+            ]
+          },
+          {
+            text: 'Esempi',
+            items: [
+              { text: 'Esempi Markdown', link: '/it/examples/markdown-examples' },
+              { text: 'Esempi API Runtime', link: '/it/examples/api-examples' }
+            ]
+          }
+        ]
+      }
+    }
+  },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-
     siteTitle: 'Kimu-Docs',
-
     logo: {
       light: '/images/icon.svg',
       dark: '/images/icon.svg',
       alt: 'Kimu'
     },
-
     lastUpdated: {
       text: 'Updated at',
       formatOptions: {
@@ -23,51 +96,7 @@ export default defineConfig({
         timeStyle: 'medium'
       }
     },
-
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
-      { text: 'Examples', link: '/examples' },
-
-      {
-        text: 'Dropdown Menu',
-        items: [
-          { text: 'Item A', link: '/item-1' },
-          { text: 'Item B', link: '/item-2' },
-          { text: 'Item C', link: '/item-3' }
-        ]
-      }
-
-    ],
-
-    sidebar: [
-      {
-        text: 'Guide',
-        items: [
-          { text: 'Introduction', link: '/guide/index' },
-          { text: 'Get Started', link: '/guide/get-started' },
-          { text: 'Architecture', link: '/guide/architecture' },
-          { text: 'Life Cycle', link: '/guide/lifecycle' },
-          { text: 'Configuration', link: '/guide/configuration' },
-          { text: 'Extensions', link: '/guide/extensions' },
-          { text: 'Modules', link: '/guide/modules' },
-          { text: 'Helpers & Services', link: '/guide/helpers' },
-          { text: 'API Reference', link: '/guide/api' },
-          { text: 'FAQ', link: '/guide/faq' },
-          { text: 'Next Steps', link: '/guide/next-steps' },
-          { text: 'Community', link: '/guide/community' },
-          { text: 'Author and Contact', link: '/guide/about' }
-        ]
-      },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/examples/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/examples/api-examples' }
-        ]
-      }
-    ],
-
+    // ...existing code...
     socialLinks: [
       {
         icon: {
@@ -78,24 +107,9 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/unicoverso/kimu' },
       { icon: 'instagram', link: 'https://instagram.com/unicoverso_com' }
     ],
-
     footer: {
       message: 'Released under the *** License.',
       copyright: 'Copyright © 2025 - Marco (Hocram) Di Pasquale - UnicòVerso'
-    },
-
-    /*
-    carbonAds: {
-      code: 'your-carbon-code',
-      placement: 'your-carbon-placement'
     }
-    */
-
-    /*
-    docFooter: {
-      prev: 'Pagina prior',
-      next: 'Proxima pagina'
-    }
-    */
   }
 })

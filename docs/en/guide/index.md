@@ -27,4 +27,3 @@ This guide will help you understand the core concepts of KIMU-CORE, how to get s
 
 >Use the navigation menu to explore each section in detail  
 >and start building with KIMU-CORE!
-

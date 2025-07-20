@@ -38,17 +38,3 @@ KIMU-CORE supports multiple environments and flexible configuration to adapt to 
 ## 🕒 Runtime vs Build Time
 
 - Some configuration options are read only at build time (e.g., bundling, environment variables).
-- Others can be modified at runtime via extensions or the KIMU API (e.g., UI settings, enabled features).
-
----
-
-## ✅ Best Practices
-
-- Keep configuration files organized and separated by environment.
-- Use clear variable names and document available options.
-- Avoid hardcoding sensitive data; use environment variables when possible.
-- Test your configuration in all environments before deployment.
-
----
-
-For more details, see the [Architecture](./architecture.md) section or explore the configuration files in the `config/` and `env/` folders.
