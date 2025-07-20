@@ -1,0 +1,83 @@
+# NOTICE
+
+**KIMU — Keep It Minimal UI Framework**  
+Copyright © 2024–2025 Marco Di Pasquale (UnicòVerso)
+
+This repository includes technical documentation, guides, concepts, and design structure  
+developed by Marco Di Pasquale (UnicòVerso),  
+released under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+The source code of `KIMU`, including the `kimu-core` framework,  
+is released under the [Mozilla Public License 2.0 (MPL-2.0)](./LICENSE).  
+
+
+---
+
+
+## 📖 About this Notice
+
+This file outlines the principles for use, attribution, and collaboration  
+within the `KIMU` documentation and conceptual materials.  
+It is meant to support a culture of openness, clarity, and creative respect.
+
+
+---
+
+
+## 📦 Usage and Distribution
+
+All non-executable content in this repository  
+(including documentation, naming conventions, design structures, and conceptual texts)  
+is freely reusable, remixable, and shareable — even for commercial purposes —  
+as long as appropriate credit is given to the original author.
+
+Please retain this `NOTICE` file in any redistributed or derived version of the content,  
+in accordance with the terms of the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
+
+
+---
+
+
+## 🤝 Contributions and Collaboration
+
+Contributions to this documentation, site, or project structure — whether via pull requests, edits, or issue discussions —  
+are deeply appreciated and credited when integrated.
+
+By contributing, you agree that your input may become part of the evolving `KIMU` project  
+and may be reused in future formats, always respecting your authorship and intent.
+
+All contributions are credited where appropriate, and used in line with the spirit of open collaboration and shared growth.
+
+> Thank you for being part of this vision.
+
+
+---
+
+
+## 🏷️ Trademarks and Naming
+
+**"KIMU"** and **"UnicòVerso"** are names associated with the original author.  
+Use of these names in modified or derivative works requires prior written permission.  
+Unauthorized use may constitute a violation of moral rights and trademark protection.
+
+This is not meant to limit creative forks, but to protect the identity of the original project and its ecosystem.
+
+
+---
+
+
+## 🔍 More Information
+
+- 🌐 Website: [https://unicoverso.com/kimu](https://unicoverso.com/kimu)  
+- 🐙 GitHub: [https://github.com/unicoverso/kimu](https://github.com/unicoverso/kimu)  
+- 📩 Author Contact: [info@unicoverso.com](mailto:info@unicoverso.com)
+
+
+---
+
+
+_End of NOTICE_
+
+
+---
+

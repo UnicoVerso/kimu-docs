@@ -1,0 +1,11 @@
+# Ensure consistent line endings
+* text=auto
+
+# Treat Markdown and code files as UTF-8
+*.md text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.scss text eol=lf
