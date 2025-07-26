@@ -1,0 +1,15 @@
+/**
+ * Custom styles for KIMU documentation
+ * These styles override the default VitePress theme
+ */
+
+/* Justified text alignment for documentation content */
+main p,
+.vp-doc p,
+.VPDoc p,
+.content-container p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+/* Add more custom styles below */
