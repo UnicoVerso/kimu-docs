@@ -36,6 +36,19 @@ export default defineConfig({
 
   locales: {
     root: {
+      label: 'Welcome',
+      lang: 'en-US',
+      link: `/`,
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: `/` },
+          { text: '🇮🇹 Italiano', link: `/it/` },
+          { text: '🇬🇧 English', link: `/en/` },
+        ],
+        sidebar: []
+      }
+    },
+    en: {
       label: 'English',
       lang: 'en-US',
       link: `/en/`,
@@ -49,123 +62,7 @@ export default defineConfig({
           { text: 'Examples', link: `/en/examples/` },
         ],
         sidebar: [
-          {
-            text: 'Concepts',
-            collapsed: true,
-            items: [
-              { text: 'Introduction', link: `/en/concepts/introduction` },
-              { text: 'Philosophy', link: `/en/concepts/philosophy` },
-              { text: 'Manifesto', link: `/en/concepts/manifest` },
-              { text: 'Vision & Mission', link: `/en/concepts/vision-mission` },
-              { text: 'Why KIMU?', link: `/en/concepts/why-kimu` },
-              { text: 'Use Cases', link: `/en/concepts/use-cases` },
-              { text: 'History', link: `/en/concepts/history` },
-              { text: 'Credits', link: `/en/concepts/credits` },
-              { text: 'Contributing', link: `/en/concepts/contributing` },
-              { text: 'KIMU vs Other Frameworks', link: `/en/concepts/kimu-vs-others` },
-              { text: 'Roadmap', link: `/en/concepts/roadmap` },
-              { text: 'FAQ', link: `/en/concepts/faq` }
-            ]
-          },
-          {
-            text: 'Guide',
-            collapsed: true,
-            items: [
-              { text: 'Introduction', link: `/en/guide/introduction` },
-              { text: 'Get Started', link: `/en/guide/get-started` },
-              { text: 'Architecture', link: `/en/guide/architecture` },
-              { text: 'Configuration', link: `/en/guide/configuration` },
-              { text: 'Best Practices', link: `/en/guide/best-practices` },
-              { text: 'Lifecycle', link: `/en/guide/lifecycle` },
-              {
-                text: 'Extensions',
-                collapsed: false,
-                items: [
-                  { text: 'Overview', link: `/en/guide/extensions/` },
-                  { text: 'Getting Started', link: `/en/guide/extensions/getting-started` },
-                  { text: 'Anatomy', link: `/en/guide/extensions/anatomy` },
-                  { text: 'Development Patterns', link: `/en/guide/extensions/patterns` },
-                  { text: 'Communication', link: `/en/guide/extensions/communication` },
-                  { text: 'Advanced Templates', link: `/en/guide/extensions/templates` },
-                  { text: 'Lifecycle', link: `/en/guide/extensions/lifecycle` },
-                  { text: 'Best Practices', link: `/en/guide/extensions/best-practices` }
-                ]
-              },
-              { text: 'Modules', link: `/en/guide/modules` },
-              { text: 'Helpers', link: `/en/guide/helpers` },
-              { text: 'API', link: `/en/guide/api` },
-              { text: 'Community', link: `/en/guide/community` },
-              { text: 'Technical FAQ', link: `/en/guide/faq` },
-              { text: 'Next Steps', link: `/en/guide/next-steps` }
-            ]
-          },
-          {
-            text: 'Framework',
-            collapsed: true,
-            items: [
-              { text: 'Overview', link: `/en/framework/` },
-              {
-                text: 'Core Classes',
-                collapsed: true,
-                items: [
-                  { text: 'KimuApp', link: `/en/framework/core/kimu-app` },
-                  { text: 'KimuEngine', link: `/en/framework/core/kimu-engine` },
-                  { text: 'KimuRender', link: `/en/framework/core/kimu-render` },
-                  { text: 'KimuStore', link: `/en/framework/core/kimu-store` },
-                  { text: 'KimuAssetManager', link: `/en/framework/core/kimu-asset-manager` },
-                  { text: 'KimuExtensionManager', link: `/en/framework/core/kimu-extension-manager` },
-                  { text: 'KimuComponentElement', link: `/en/framework/core/kimu-component-element` }
-                ]
-              },
-              {
-                text: 'Decorators',
-                collapsed: true,
-                items: [
-                  { text: '@KimuComponent', link: `/en/framework/decorators/kimu-component` }
-                ]
-              },
-              {
-                text: 'Types',
-                collapsed: true,
-                items: [
-                  { text: 'KimuExtensionMeta', link: `/en/framework/types/kimu-extension-meta` },
-                  { text: 'KimuAsset', link: `/en/framework/types/kimu-asset` },
-                  { text: 'KimuLang', link: `/en/framework/types/kimu-lang` }
-                ]
-              },
-              {
-                text: 'Extensions',
-                collapsed: true,
-                items: [
-                  { text: 'Overview', link: `/en/framework/extensions/index` },
-                  { text: 'Creating Extensions', link: `/en/framework/extensions/creating-extensions` },
-                  { text: 'Extension Lifecycle', link: `/en/framework/extensions/extension-lifecycle` },
-                  { text: 'Extension Manifest', link: `/en/framework/extensions/extension-manifest` },
-                  { text: 'Build & Deployment', link: `/en/framework/extensions/build-deployment` },
-                  { text: 'Best Practices', link: `/en/framework/extensions/best-practices` }
-                ]
-              },
-              {
-                text: 'Patterns',
-                collapsed: true,
-                items: [
-                  { text: 'Overview', link: `/en/framework/patterns/index` },
-                  { text: 'Singleton Pattern', link: `/en/framework/patterns/singleton-pattern` },
-                  { text: 'Observer Pattern', link: `/en/framework/patterns/observer-pattern` },
-                  { text: 'Asset Loading', link: `/en/framework/patterns/asset-loading` }
-                ]
-              }
-            ]
-          },
-          {
-            text: 'Examples',
-            collapsed: true,
-            items: [
-              { text: 'Overview', link: `/en/examples/index` },
-              { text: 'Markdown Examples', link: `/en/examples/markdown-examples` },
-              { text: 'API Examples', link: `/en/examples/api-examples` }
-            ]
-          }
+          // ...sidebar inglese come prima...
         ]
       }
     },

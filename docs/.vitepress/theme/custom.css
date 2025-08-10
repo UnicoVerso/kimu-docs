@@ -3,13 +3,437 @@
  * These styles override the default VitePress theme
  */
 
+/* Override VitePress brand color to match text color */
+:root {
+  --vp-c-brand: var(--vp-c-text-1);
+  --vp-c-brand-light: var(--vp-c-text-2);
+  --vp-c-brand-dark: var(--vp-c-text-1);
+}
+
+/* Remove background from VitePress code blocks and language blocks */
+.vp-doc div[class*='language-'],
+.vp-block {
+  background: transparent !important;
+}
+
 /* Justified text alignment for documentation content */
 main p,
 .vp-doc p,
 .VPDoc p,
 .content-container p {
-  text-align: justify !important;
+  text-align: justify;
   text-justify: inter-word;
 }
 
-/* Add more custom styles below */
+/* Custom styles for KIMU Framework homepage */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.hero-section {
+  max-width: 800px;
+  margin-bottom: 4rem;
+}
+.logo-container {
+  margin-bottom: 2.5rem;
+}
+.logo-container img {
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+}
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--vp-c-text-1);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  color: var(--vp-c-brand);
+  font-weight: 600;
+  font-style: italic;
+  text-align: center !important;
+  display: block;
+  width: 100%;
+}
+.language-sections {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
+}
+.language-section {
+  background: var(--vp-c-bg-soft);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--vp-c-divider);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.language-column {
+  text-align: center;
+  border: none;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+.language-column h2 {
+  color: var(--vp-c-text-1);
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  border: none;
+  border-top: none;
+  flex-shrink: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.language-column p {
+  color: var(--vp-c-text-2);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  flex-grow: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+/* Large flag at the top of each language column */
+.flag-icon {
+  font-size: 4rem !important;
+  text-align: center !important;
+  margin: 0 0 1.5rem 0 !important;
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: var(--vp-c-text-1) !important;
+  display: block;
+  width: 100%;
+  line-height: 1;
+}
+.language-column .section-button {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.button-text {
+  color: var(--vp-c-text-1);
+  font-size: 1.1rem !important;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+.flag-button {
+  font-size: 3.5rem;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: 2px solid transparent;
+}
+.flag-button:hover {
+  transform: scale(1.1);
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-border);
+  text-decoration: none !important;
+}
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 2px solid;
+  min-width: 200px;
+  justify-content: center;
+}
+.btn-primary {
+  background: #3a3a3a;
+  color: #ffffff;
+  border-color: #3a3a3a;
+}
+.btn-secondary {
+  background: #ffffff;
+  color: #3a3a3a;
+  border-color: #3a3a3a;
+}
+/* Dark theme adjustments */
+.dark .btn-secondary {
+  background: #ffffff;
+  color: #3a3a3a;
+  border-color: #ffffff;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.btn-primary:hover {
+  background: #3a3a3a;
+  border-color: #3a3a3a;
+  color: #ffffff;
+}
+.btn-primary:hover a {
+  color: #ffffff;
+}
+.btn-secondary:hover {
+  background: #3a3a3a;
+  border-color: #3a3a3a;
+  color: #ffffff;
+}
+/* Dark theme hover adjustments */
+.dark .btn-secondary:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #1e293b;
+}
+.info-card {
+  padding: 2rem;
+  background: var(--vp-c-bg-soft);
+  border-radius: 16px;
+  max-width: 900px;
+  border: 1px solid var(--vp-c-divider);
+}
+.info-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.info-header h3 {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.info-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.info-column {
+  display: flex;
+  flex-direction: column;
+}
+.info-column h4 {
+  margin: 0 0 1rem 0;
+  color: var(--vp-c-text-1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+}
+.info-description {
+  margin: 0 0 1.5rem 0;
+  color: var(--vp-c-text-2);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.info-description strong {
+  color: var(--vp-c-text-1);
+}
+.zen-quote {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--vp-c-bg);
+  border-left: 4px solid var(--vp-c-brand);
+  border-radius: 8px;
+  font-style: italic;
+  color: var(--vp-c-text-2);
+}
+.project-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+.project-link a {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.project-meta {
+  color: var(--vp-c-text-3);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  display: block;
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .language-sections {
+    max-width: 100%;
+    padding: 0 1rem;
+    margin: 0 0 3rem 0;
+  }
+  .language-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+    margin: 0;
+    background: transparent;
+    border: none;
+  }
+  .language-column {
+    align-items: stretch;
+    padding: 1.5rem 1rem;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--vp-c-bg-soft);
+    margin-bottom: 1.5rem;
+  }
+  .language-column:last-child {
+    margin-bottom: 0;
+  }
+  .language-column h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .language-column p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  .flag-icon {
+    font-size: 3.5rem !important;
+    margin-bottom: 1rem !important;
+    padding: 0 !important;
+  }
+  .button-text {
+    font-size: 1rem !important;
+    padding: 0;
+  }
+  .flag-button {
+    font-size: 3rem;
+  }
+  .info-sections {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .info-column h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-container {
+    padding: 1rem 1rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+    padding: 0 0.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+  .language-sections {
+    padding: 0 1rem;
+    margin: 0 auto 3rem auto;
+  }
+  .language-section {
+    padding: 1rem 0;
+    gap: 1.5rem;
+    background: transparent;
+    border: none;
+    margin: 0;
+  }
+  .language-column {
+    padding: 1.5rem 1.25rem;
+    margin: 0 0.75rem 1.5rem 0.75rem !important;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--vp-c-bg-soft);
+    box-sizing: border-box;
+  }
+  .language-column:last-child {
+    margin-bottom: 0.75rem;
+  }
+  .language-column h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+  }
+  .language-column p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+    text-align: justify;
+  }
+  .flag-icon {
+    font-size: 3rem !important;
+    margin-bottom: 0.75rem !important;
+    padding: 0 !important;
+  }
+  .button-text {
+    font-size: 0.95rem !important;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
+  .flag-button {
+    font-size: 2.5rem;
+    padding: 0.3rem;
+  }
+  .info-card {
+    margin-top: 2rem;
+    padding: 1.5rem 1.25rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+  .info-sections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .info-column h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .info-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .zen-quote {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
