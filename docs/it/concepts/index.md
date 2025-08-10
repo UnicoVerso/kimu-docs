@@ -1,56 +1,24 @@
 <p align="center">
-  <img src="/images/logo_kimu.png" alt="Logo KIMU" width="180" />
+  <img src="/images/logo_kimu.png" alt="KIMU Logo" width="180" />
 </p>
 <br>
 <br>
 
-# Benvenuto in KIMU
+# Concetti KIMU
 
-**KIMU** è un framework front-end leggero, minimale e modulare per costruire **interfacce poetiche** ed **estensibili**, basato su **Web Components**, senza dipendenze, dichiarativo e dinamico. 
+**Benvenuto nella mente e nell'anima di KIMU!**
 
-**KIMU** è più di un framework: è una filosofia del costruire digitale, una cassetta degli attrezzi per artisti del web. Nasce dal desiderio di creare spazi digitali significativi, leggeri ed eleganti. Per chi progetta con **intenzione**. Per chi sviluppa con **cura**. Per chi cerca **bellezza** nella semplicità.
+Qui non troverai solo tecnologie, ma idee, visioni e valori che ispirano ogni riga di codice.
 
-> _Non è solo strumenti, ma spazi._  
-> _Non solo componenti, ma estensioni di pensiero._  
-> _Ogni interfaccia è un gesto, ogni modulo una nota._  
-> _Non impone: accompagna. Non grida: respira._  
-> _Minimo nell'essenza, infinito nelle possibilità._
+KIMU nasce per chi vuole costruire spazi digitali che siano poetici, essenziali e liberi. Un framework che mette al centro la creatività, la leggerezza e la modularità, per chi cerca bellezza e significato nel web.
 
-## Perché KIMU?
+La nostra **missione**? Offrire strumenti che non impongano limiti, ma aprano possibilità. La nostra **visione**? Un web dove ogni interfaccia è un gesto, ogni estensione una nota, ogni progetto un'esperienza unica. I nostri **valori**? Semplicità, apertura, comunità, rispetto per l'essenziale.
 
-In un'epoca di framework sempre più complessi e vincolanti, **KIMU** offre un'alternativa e una visione radicale: un toolkit ultra-minimale che  lascia liberi e abbraccia gli standard web nativi. 
+Vuoi scoprire cosa rende KIMU diverso?  
+Sei nel posto giusto!
 
-La nostra missione è permetterti di:
-- Costruire con **intenzione**, non con il superfluo
-- Creare interfacce che **respirano**
-- Mantenere il controllo completo sulla tua **architettura**
-- Esprimere la tua **creatività** senza limiti
+In questa sezione troverai la filosofia, il manifesto, la storia, i casi d'uso e le differenze con gli altri framework. Ogni pagina è pensata per incuriosirti e farti esplorare più a fondo il cuore del progetto.
 
-> _"KIMU è uno spazio dove la semplicità incontra l'espressività,_  
-> _dove ogni linea di codice è un verso di poesia digitale."_
+**Lasciati ispirare, inizia il viaggio!**
 
-## Caratteristiche Distintive
-
-- Ogni byte è stato scelto con cura 
-- Core di appena ~20kB 
-- Zero dipendenze esterne
-- Caricamento modulare on-demand
-- Web Components nativi
-- API dichiarativa e intuitiva
-- Sistema di estensioni dinamico
-- Privacy e sicurezza by design
-
-## Un Progetto Vivo e Aperto
-
-KIMU cresce attraverso la sua community. Ogni contributo arricchisce il progetto, ogni idea lo fa evolvere. 
-
-- 🌱 **Open Source**: Codice aperto e trasparente
-- 🤝 **Community-Driven**: Guidato dalla comunità
-- 🎯 **Vision-Oriented**: Con una chiara direzione
-- ⭐ **Future-Proof**: Basato su standard web duraturi
-
----
-
-<p align="center">
-<i>Scegli l'essenziale. Costruisci con intenzione. Crea spazi che ispirano.</i>
-</p>
+👉 [Vai all'Introduzione](./introduction.md)

@@ -18,6 +18,18 @@ dist-ssr
 .build
 *.local
 
+# VitePress build & cache
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/.vitepress/cache/deps
+docs/.vitepress/temp
+docs/.vitepress/.cache
+docs/.vitepress/.temp
+docs/.vitepress/ssr-temp
+docs/.vitepress/ssr-dist
+docs/.vitepress/ssr-cache
+docs/.vitepress/ssr-manifest.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,10 +1,14 @@
 {
   "scripts": {
+    "start": "vitepress dev docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "docs:preview:prod": "vitepress preview docs --base=/kimu/docs/",
+    "docs:build:prod": "vitepress build docs --base=/kimu/docs/"
   },
   "devDependencies": {
+    "@types/node": "^24.2.1",
     "vitepress": "^1.6.3"
   },
   "dependencies": {
