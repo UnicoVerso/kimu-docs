@@ -4,7 +4,7 @@
 <br>
 <br>
 
-# Casi d'Uso di KIMU
+# Casi d'Uso
 
 > _"Ogni strumento ha il suo spazio, ogni tecnologia il suo scopo.  
 > KIMU fiorisce dove l'intenzione creativa incontra la semplicità."_

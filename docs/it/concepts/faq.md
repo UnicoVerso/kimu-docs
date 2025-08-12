@@ -14,7 +14,7 @@
 KIMU sta per "Keep It Minimal UI" - un nome che riflette la filosofia minimalista e intenzionale del framework. KIMU abbraccia l'essenzialità come virtù e la leggerezza come forza.
 
 ### KIMU è adatto a progetti commerciali?
-Assolutamente sì! KIMU è rilasciato con licenza open source MPL-2.0 che consente l'uso in progetti commerciali. È particolarmente adatto per dashboard aziendali, chioschi informativi, e applicazioni che richiedono leggerezza e performance.
+Assolutamente sì! KIMU è rilasciato con licenza open source MPL-2.0 che consente l'uso in progetti commerciali. È particolarmente adatto per dashboard aziendali, chioschi informativi e applicazioni che richiedono leggerezza e performance.
 
 ### Perché dovrei usare KIMU invece di framework più conosciuti?
 KIMU offre un approccio diverso: ultra-leggero, modulare e focalizzato sulla libertà creativa. Scegli KIMU quando valorizzi la leggerezza, la modularità e l'espressività più della vastità delle funzionalità integrate o dell'ecosistema.

@@ -4,7 +4,7 @@ Classe base astratta per tutti i componenti e estensioni del framework KIMU.
 
 ## Descrizione
 
-`KimuComponentElement` è la classe fondamentale da cui derivano tutti i componenti KIMU. Estende `HTMLElement` e fornisce funzionalità essenziali per il lifecycle, rendering, e gestione delle risorse.
+`KimuComponentElement` è la classe fondamentale da cui derivano tutti i componenti KIMU. Estende `HTMLElement` e fornisce funzionalità essenziali per il lifecycle, rendering e gestione delle risorse.
 
 **Caratteristiche principali:**
 - Shadow DOM automatico per isolamento CSS/DOM

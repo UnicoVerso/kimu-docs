@@ -9,7 +9,7 @@
 KIMU è più di un framework: è un modo di pensare, un approccio al digitale, una filosofia dell'interazione. Ci impegniamo a mantenere questa visione viva in ogni linea di codice, in ogni componente, in ogni decisione tecnica.
 
 ## La nostra Visione
-Immaginiamo un mondo digitale dove la tecnologia respira in armonia con l'intenzione umana. Dove ogni spazio digitale è significativo, leggero e vivo. Un ecosistema dove ogni elemento ha un proposito, ogni interfaccia è un gesto consapevole, e la complessità si trasforma in semplicità poetica.
+Immaginiamo un mondo digitale dove la tecnologia respira in armonia con l'intenzione umana. Dove ogni spazio digitale è significativo, leggero e vivo. Un ecosistema dove ogni elemento ha un proposito, ogni interfaccia è un gesto consapevole e la complessità si trasforma in semplicità poetica.
 
 > _"Non costruiamo solo interfacce,_  
 > _creiamo spazi dove il codice danza con l'intenzione,_  
