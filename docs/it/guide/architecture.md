@@ -13,7 +13,7 @@ src/
     kimu-component-element.ts
     kimu-engine.ts
     kimu-render.ts
-    kimu-asset-manage.ts
+    kimu-asset-manager.ts
     kimu-extension-manager.ts
     kimu-store.ts
     kimu-types.ts

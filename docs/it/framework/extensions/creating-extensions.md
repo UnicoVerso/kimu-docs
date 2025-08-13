@@ -176,7 +176,7 @@ Puoi testare la tua estensione includendola in una pagina HTML:
 Se la tua estensione ha bisogno di asset (immagini, file, ecc.), crea una cartella `assets/`:
 
 ```typescript
-import { KimuAssetManager } from '../../core/kimu-asset-manage';
+import { KimuAssetManager } from '../../core/kimu-asset-manager';
 
 @KimuComponent({
   tag: 'my-extension',

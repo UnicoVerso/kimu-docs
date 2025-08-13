@@ -165,7 +165,7 @@ export class MyExtension extends HTMLElement {
 ### Asset Dinamici
 
 ```typescript
-import { KimuAssetManager } from '../../core/kimu-asset-manage';
+import { KimuAssetManager } from '../../core/kimu-asset-manager';
 
 export class MyExtension extends HTMLElement {
   private async loadDynamicAsset() {
