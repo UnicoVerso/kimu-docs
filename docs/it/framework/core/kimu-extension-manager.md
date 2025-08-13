@@ -31,7 +31,7 @@ await manager.init();
 
 ```typescript
 // Carica una singola estensione
-await manager.load('kimu-app');
+await manager.load('kimu-home');
 
 // Carica più estensioni
 const extensions = ['header-component', 'footer-component', 'sidebar'];
@@ -55,7 +55,7 @@ if (manager.isLoaded('my-widget')) {
 }
 
 // Ottieni metadata estensione
-const meta = manager.get('kimu-app');
+const meta = manager.get('kimu-home');
 console.log(`${meta?.name} v${meta?.version}`);
 ```
 
@@ -163,7 +163,7 @@ Ottiene i metadata di un'estensione specifica.
 
 **Esempio:**
 ```typescript
-const appMeta = manager.get('kimu-app');
+const appMeta = manager.get('kimu-home');
 if (appMeta) {
     console.log(`App principale: ${appMeta.name}`);
     console.log(`Versione: ${appMeta.version}`);
@@ -228,10 +228,10 @@ Il manifest delle estensioni (`extensions-manifest.json`) definisce le estension
 ```json
 [
   {
-    "tag": "kimu-app",
-    "path": "kimu-app",
+    "tag": "kimu-home",
+    "path": "kimu-home",
     "internal": true,
-    "name": "KIMU Main App",
+    "name": "KIMU Home Main App",
     "description": "Main interface container",
     "version": "1.0.0",
     "author": "UnicòVerso",
@@ -417,7 +417,7 @@ class IntelligentLoader {
     }
     
     static async preloadCritical(): Promise<void> {
-        const criticalExtensions = ['kimu-app', 'error-handler', 'loading-spinner'];
+        const criticalExtensions = ['kimu-home', 'error-handler', 'loading-spinner'];
         
         await Promise.all(
             criticalExtensions.map(tag => this.lazyLoad(tag))
@@ -438,8 +438,8 @@ async function initializeApp(): Promise<void> {
     // 1. Inizializza sistema
     await manager.init();
     
-    // 2. Carica estensioni critiche
-    await manager.load('kimu-app');
+    // 2. Carica estensioni
+    await manager.load('kimu-home');
     
     // 3. Pre-carica estensioni comuni
     const common = ['header', 'footer', 'navigation'];

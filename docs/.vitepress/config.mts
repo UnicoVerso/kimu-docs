@@ -105,6 +105,7 @@ export default defineConfig({
                 ]
               },
               { text: 'Modules', link: `/en/guide/modules` },
+              { text: 'i18n (Internationalization)', link: `/en/guide/i18n` },
               { text: 'Helpers', link: `/en/guide/helpers` },
               { text: 'API', link: `/en/guide/api` },
               { text: 'Community', link: `/en/guide/community` },
@@ -240,6 +241,7 @@ export default defineConfig({
                 ]
               },
               { text: 'Moduli', link: `/it/guide/modules` },
+              { text: 'i18n (Internazionalizzazione)', link: `/it/guide/i18n` },
               { text: 'Helper', link: `/it/guide/helpers` },
               { text: 'API', link: `/it/guide/api` },
               { text: 'Community', link: `/it/guide/community` },

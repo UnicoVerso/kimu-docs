@@ -12,7 +12,11 @@
     <div class="language-sections">
       <div class="language-section">
         <div class="language-column">
-          <p class="flag-icon">🇮🇹</p>
+          <div class="section-button">
+            <a href="/it/" class="flag-button">
+              🇮🇹
+            </a>
+          </div>
           <h2>Documentazione Italiana</h2>
           <p>
             <strong>KIMU</strong> è un framework <strong>ultra-leggero</strong> che segue il principio dell'essenzialismo digitale: 
@@ -37,7 +41,11 @@
           </div>
         </div>
         <div class="language-column">
-          <p class="flag-icon">🇬🇧</p>
+          <div class="section-button">
+            <a href="/en/" class="flag-button">
+              🇬🇧
+            </a>
+          </div>
           <h2>English Documentation</h2>
           <p>
             <strong>KIMU</strong> is an <strong>ultra-lightweight framework</strong> that follows the principle of digital essentialism: 

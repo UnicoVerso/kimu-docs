@@ -19,7 +19,7 @@ src/
     kimu-types.ts
   extensions/
     extensions-manifest.json
-    kimu-app/
+    kimu-home/
       component.ts
       view.html
       style.css

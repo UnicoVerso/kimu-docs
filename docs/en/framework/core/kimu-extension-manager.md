@@ -93,7 +93,7 @@ Returns the list of currently loaded extensions.
 
 ```typescript
 const loadedExtensions = manager.getLoadedExtensions();
-console.log('Loaded:', loadedExtensions); // ['kimu-app', 'ui-components']
+console.log('Loaded:', loadedExtensions); // ['kimu-home', 'ui-components']
 ```
 
 **Returns**: `string[]` - Array of loaded extension tags
@@ -136,11 +136,11 @@ The manager automatically discovers extensions through the `extensions-manifest.
 ```json
 [
   {
-    "tag": "kimu-app",
-    "path": "kimu-app",
+    "tag": "kimu-home",
+    "path": "kimu-Home",
     "internal": true,
-    "name": "KIMU Main App",
-    "description": "Main interface container",
+    "name": "KIMU Home App",
+    "description": "Home App interface container",
     "version": "1.0.0",
     "author": "UnicòVerso",
     "icon": "🏠",
@@ -225,7 +225,7 @@ async function setupExtensions() {
   const manager = KimuExtensionManager.getInstance();
   
   // Load specific extensions
-  await manager.loadExtension('kimu-app');
+  await manager.loadExtension('kimu-home');
   await manager.loadExtension('ui-components');
   
   // Or load all at once

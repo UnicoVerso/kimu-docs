@@ -46,10 +46,10 @@ KIMU-CORE is the lightweight, modular runtime that powers the entire KIMU framew
 
 ```typescript
 @KimuComponent({
-  tag: 'kimu-app',
-  name: 'KIMU Main App',
+  tag: 'kimu-home',
+  name: 'KIMU Home Main App',
   version: '1.0.0',
-  path: 'kimu-app',
+  path: 'kimu-home',
 })
 export class KimuApp extends KimuComponentElement {
   // Minimal component, ready to be extended

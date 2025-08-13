@@ -263,7 +263,7 @@ class MigrationManager {
             }
             
             // Migrazione 3: Aggiungi campo 'internal' per estensioni core
-            if (['kimu-app', 'kimu-core'].includes(ext.tag) && ext.internal === undefined) {
+            if (['kimu-home', 'kimu-core'].includes(ext.tag) && ext.internal === undefined) {
                 ext.internal = true;
                 needsMigration = true;
             }

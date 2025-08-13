@@ -25,8 +25,8 @@ Il file `extensions-manifest.json` contiene il registro di tutte le estensioni d
 ```json
 [
   {
-    "tag": "kimu-app",
-    "path": "kimu-app",
+    "tag": "kimu-home",
+    "path": "kimu-home",
     "internal": true,
     "name": "KIMU Main App",
     "description": "Main interface container",

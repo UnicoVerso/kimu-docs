@@ -115,10 +115,10 @@ Add the extension to the `extensions-manifest.json` file:
 ```json
 [
   {
-    "tag": "kimu-app",
-    "path": "kimu-app",
+    "tag": "kimu-home",
+    "path": "kimu-home",
     "internal": true,
-    "name": "KIMU Main App",
+    "name": "KIMU Home Main App",
     "description": "Main interface container",
     "version": "1.0.0",
     "author": "UnicòVerso",

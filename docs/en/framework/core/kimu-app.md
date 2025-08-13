@@ -63,7 +63,7 @@ await app.initialize({
   debug: true,
   theme: 'dark',
   language: 'en',
-  extensions: ['kimu-app', 'notification-manager']
+  extensions: ['kimu-home', 'notification-manager']
 });
 ```
 
@@ -148,7 +148,7 @@ await app.initialize({
 });
 
 // Load essential extensions
-await app.loadExtension('kimu-app');
+await app.loadExtension('kimu-home');
 await app.loadExtension('ui-components');
 
 console.log('Application initialized successfully');
@@ -162,7 +162,7 @@ async function setupApplication() {
   
   try {
     await app.initialize({
-      extensions: ['kimu-app', 'data-manager', 'ui-toolkit']
+      extensions: ['kimu-home', 'data-manager', 'ui-toolkit']
     });
     
     console.log('All extensions loaded successfully');
@@ -170,7 +170,7 @@ async function setupApplication() {
     console.error('Error during application setup:', error);
     
     // Fallback loading
-    await app.loadExtension('kimu-app'); // Load minimum
+    await app.loadExtension('kimu-home'); // Load minimum
   }
 }
 ```
@@ -343,7 +343,7 @@ async function initializeApp() {
   await app.initialize(baseConfig);
   
   // 2. Load core extensions first
-  await app.loadExtension('kimu-app');
+  await app.loadExtension('kimu-home');
   
   // 3. Load dependent extensions
   await app.loadExtension('ui-components');
@@ -409,7 +409,7 @@ async function main() {
     await app.initialize(config);
     
     // Load extensions based on configuration
-    const extensions = config.extensions || ['kimu-app'];
+    const extensions = config.extensions || ['kimu-home'];
     for (const ext of extensions) {
       await app.loadExtension(ext);
     }

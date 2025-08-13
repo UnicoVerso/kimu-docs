@@ -462,10 +462,10 @@ Il manifest delle estensioni (`extensions-manifest.json`) contiene un array di `
 ```json
 [
   {
-    "tag": "kimu-app",
-    "name": "KIMU Main App", 
+    "tag": "kimu-home",
+    "name": "KIMU Home Main App", 
     "version": "1.0.0",
-    "path": "kimu-app",
+    "path": "kimu-home",
     "internal": true,
     "author": "UnicòVerso",
     "icon": "🏠"
