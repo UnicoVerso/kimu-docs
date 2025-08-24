@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://unicoverso.org/kimu" target="_blank">
+  <a href="https://unicoverso.com/kimu" target="_blank">
     <img src="logo_kimu.png" alt="KIMU Logo" width="180" />
   </a>
 </p>
@@ -23,8 +23,8 @@ Created and maintained by Marco Di Pasquale and the collective **UnicòVerso**.
 
 ## 🌐 Useful Links
 
-- [UnicòVerso Website](https://unicoverso.org)
-- [KIMU Project Page](https://unicoverso.org/kimu)
+- [UnicòVerso Website](https://unicoverso.com)
+- [KIMU Project Page](https://unicoverso.com/kimu)
 - [GitHub: KIMU](https://github.com/UnicoVerso/kimu)
 - [GitHub: KIMU-Core](https://github.com/UnicoVerso/kimu-core)
 - [GitHub: UnicòVerso](https://github.com/UnicoVerso)
