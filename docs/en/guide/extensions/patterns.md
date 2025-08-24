@@ -112,7 +112,7 @@ export class LiveClock extends KimuComponentElement {
     }, 1000);
   }
 
-  onDispose(): void {
+  onDestroy(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }

@@ -6,7 +6,7 @@ The lifecycle of KIMU extensions follows a predictable pattern that allows you t
 
 ### 1. **`onInit()`** - Initialization
 ### 2. **`onRender()`** - Post-Rendering  
-### 3. **`onDispose()`** - Cleanup
+### 3. **`onDestroy()`** - Cleanup
 
 ---
 
@@ -139,7 +139,7 @@ export class RenderingExample extends KimuComponentElement {
 
 ---
 
-## 🧹 3. onDispose() - Cleanup
+## 🧹 3. onDestroy() - Cleanup
 
 Executed when the extension is **removed** from the layout.
 
@@ -157,8 +157,8 @@ export class CleanupExample extends KimuComponentElement {
     this.setupObservers();
   }
 
-  onDispose(): void {
-    console.log('🧹 3. onDispose - Cleanup');
+  onDestroy(): void {
+    console.log('🧹 3. onDestroy - Cleanup');
     
     // ✅ Complete cleanup of all resources
     this.clearTimers();
@@ -200,7 +200,7 @@ export class CleanupExample extends KimuComponentElement {
 }
 ```
 
-### What to Do in `onDispose()`
+### What to Do in `onDestroy()`
 
 | ✅ **Always Do** | ⚠️ **Attention** |
 |------------------|------------------|
@@ -240,7 +240,7 @@ onInit() {
   }, 1000);
 }
 
-onDispose() {
+onDestroy() {
   if (this.timerId) {
     clearInterval(this.timerId);
   }

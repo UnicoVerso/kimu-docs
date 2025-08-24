@@ -68,7 +68,7 @@ export class MyExtension extends KimuComponentElement {
     console.log('Extension rendered');
   }
 
-  onDispose(): void {
+  onDestroy(): void {
     console.log('Extension disposed');
   }
 }

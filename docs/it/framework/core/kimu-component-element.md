@@ -56,7 +56,7 @@ export class MyComponent extends KimuComponentElement {
     }
     
     // Hook di distruzione
-    onDispose(): void {
+    onDestroy(): void {
         console.log('Componente distrutto');
     }
 }
@@ -163,7 +163,7 @@ onRender(): void {
 }
 ```
 
-#### `onDispose(): void`
+#### `onDestroy(): void`
 
 Hook chiamato quando il componente viene rimosso dal DOM.
 
@@ -173,7 +173,7 @@ Hook chiamato quando il componente viene rimosso dal DOM.
 - Rilascio risorse
 
 ```typescript
-onDispose(): void {
+onDestroy(): void {
     // Cleanup eventi
     window.removeEventListener('resize', this.handleResize);
     
@@ -318,7 +318,7 @@ export class AdvancedComponent extends KimuComponentElement {
     }
     
     // 4. Cleanup (quando rimosso)
-    onDispose(): void {
+    onDestroy(): void {
         if (this.timer) {
             clearInterval(this.timer);
         }
@@ -363,8 +363,8 @@ onRender(): void {
     this.$('.btn')?.addEventListener('click', this.handleClick.bind(this));
 }
 
-// ✅ Cleanup in onDispose
-onDispose(): void {
+// ✅ Cleanup in onDestroy
+onDestroy(): void {
     this.$('.btn')?.removeEventListener('click', this.handleClick);
 }
 ```

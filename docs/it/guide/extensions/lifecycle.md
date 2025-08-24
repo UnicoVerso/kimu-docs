@@ -6,7 +6,7 @@ Il ciclo di vita delle estensioni KIMU segue un pattern prevedibile che ti perme
 
 ### 1. **`onInit()`** - Inizializzazione
 ### 2. **`onRender()`** - Post-Rendering  
-### 3. **`onDispose()`** - Cleanup e Pulizia
+### 3. **`onDestroy()`** - Cleanup e Pulizia
 
 ---
 
@@ -153,7 +153,7 @@ export class RenderingExample extends KimuComponentElement {
 
 ---
 
-## 🧹 3. onDispose() - Cleanup
+## 🧹 3. onDestroy() - Cleanup
 
 Eseguito quando l'estensione viene **rimossa** dal layout.
 
@@ -173,8 +173,8 @@ export class CleanupExample extends KimuComponentElement {
     this.setupAsyncOperations();
   }
 
-  onDispose(): void {
-    console.log('🧹 3. onDispose - Cleanup');
+  onDestroy(): void {
+    console.log('🧹 3. onDestroy - Cleanup');
     
     // ✅ Cleanup completo di tutte le risorse
     this.clearTimers();
@@ -269,7 +269,7 @@ export class CleanupExample extends KimuComponentElement {
 }
 ```
 
-### Cosa Fare in `onDispose()`
+### Cosa Fare in `onDestroy()`
 
 | ✅ **Sempre Fare** | ⚠️ **Attenzione** |
 |-------------------|-------------------|
@@ -304,7 +304,7 @@ export class StateLifecycleExample extends KimuComponentElement {
     console.log('State dopo render:', this.state);
   }
 
-  onDispose(): void {
+  onDestroy(): void {
     this.updateState({ disposed: true });
     console.log('State finale:', this.state);
   }
@@ -381,7 +381,7 @@ export class ManagedResourcesExample extends KimuComponentElement {
     this.resourceManager.addListener(document, 'click', this.handleDocumentClick);
   }
 
-  onDispose(): void {
+  onDestroy(): void {
     // Cleanup automatico di tutte le risorse
     this.resourceManager.cleanup();
   }
@@ -418,8 +418,8 @@ export class DebugLifecycle extends KimuComponentElement {
     console.log('🔍 Debug Lifecycle - Render');
   }
 
-  onDispose(): void {
-    this.addToLog('onDispose chiamato');
+  onDestroy(): void {
+    this.addToLog('onDestroy chiamato');
     console.log('🔍 Debug Lifecycle - Dispose');
     console.log('📊 Lifecycle completo:', this.lifecycleLog);
   }
@@ -468,7 +468,7 @@ onInit() {
   }, 1000);
 }
 
-onDispose() {
+onDestroy() {
   if (this.timerId) {
     clearInterval(this.timerId);
   }

@@ -95,7 +95,7 @@ export class MyExtension extends KimuComponentElement {
     console.log('Estensione renderizzata');
   }
 
-  onDispose(): void {
+  onDestroy(): void {
     // Cleanup quando l'estensione viene rimossa
     console.log('Estensione rimossa');
     this.stopTimer();
@@ -128,7 +128,7 @@ export class MyExtension extends KimuComponentElement {
 | `refresh()` | Forza il re-render dell'estensione | Dopo cambi di stato |
 | `onInit()` | Hook di inizializzazione | Setup iniziale |
 | `onRender()` | Hook post-render | Manipolazione DOM |
-| `onDispose()` | Hook di cleanup | Pulizia risorse |
+| `onDestroy()` | Hook di cleanup | Pulizia risorse |
 
 ## 3. 🎨 Template HTML: UI Dinamica
 

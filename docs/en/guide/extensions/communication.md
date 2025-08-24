@@ -80,7 +80,7 @@ export class MessageReceiver extends KimuComponentElement {
     document.addEventListener('kimu:message-sent', this.eventListener);
   }
 
-  onDispose() {
+  onDestroy() {
     // Cleanup: remove listener
     if (this.eventListener) {
       document.removeEventListener('kimu:message-sent', this.eventListener);
@@ -186,7 +186,7 @@ export class CounterDisplay extends KimuComponentElement {
     this.refresh();
   }
 
-  onDispose() {
+  onDestroy() {
     if (this.storeListener) {
       document.removeEventListener('kimu:store-updated', this.storeListener);
     }
@@ -230,7 +230,7 @@ export class MyExtension extends KimuComponentElement {
     document.addEventListener('my-event', this.eventListener);
   }
 
-  onDispose() {
+  onDestroy() {
     // ✅ Always clean up listeners!
     if (this.eventListener) {
       document.removeEventListener('my-event', this.eventListener);

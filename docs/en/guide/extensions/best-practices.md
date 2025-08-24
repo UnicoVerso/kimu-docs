@@ -167,7 +167,7 @@ export class DebouncedSearchComponent extends KimuComponentElement {
     }
   }
 
-  onDispose() {
+  onDestroy() {
     if (this.searchTimeout) {
       clearTimeout(this.searchTimeout);
     }
@@ -267,7 +267,7 @@ export class MemoryEfficientComponent extends KimuComponentElement {
     this.resources.addEventListener(document, 'visibilitychange', this.handleVisibilityChange);
   }
 
-  onDispose() {
+  onDestroy() {
     // Automatic cleanup of all resources
     this.resources.cleanup();
     this.clearCache();
@@ -330,7 +330,7 @@ class ComponentResourceManager {
 
 ### ✅ **Always Do**
 - Use TypeScript for type safety
-- Implement cleanup in `onDispose()`
+- Implement cleanup in `onDestroy()`
 - Handle errors gracefully
 - Use immutable state
 - Implement logging for debugging
