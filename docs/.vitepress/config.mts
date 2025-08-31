@@ -41,6 +41,7 @@ export default defineConfig({
       link: `/`,
       themeConfig: {
         nav: [
+          { text: 'Home', link: `/` },
           { text: '🇮🇹 Italiano', link: `/it/` },
           { text: '🇬🇧 English', link: `/en/` },
         ],
@@ -104,8 +105,15 @@ export default defineConfig({
                   { text: 'Best Practices', link: `/en/guide/extensions/best-practices` }
                 ]
               },
-              { text: 'Modules', link: `/en/guide/modules` },
-              { text: 'i18n (Internationalization)', link: `/en/guide/i18n` },
+              {
+                text: 'Modules',
+                collapsed: true,
+                items: [
+                  { text: 'Overview', link: `/en/guide/modules` },
+                  { text: 'i18n (Internationalization)', link: `/en/guide/modules/i18n` }
+                  // ...other modules
+                ]
+              },
               { text: 'Helpers', link: `/en/guide/helpers` },
               { text: 'API', link: `/en/guide/api` },
               { text: 'Community', link: `/en/guide/community` },
@@ -240,8 +248,15 @@ export default defineConfig({
                   { text: 'Best Practices', link: `/it/guide/extensions/best-practices` }
                 ]
               },
-              { text: 'Moduli', link: `/it/guide/modules` },
-              { text: 'i18n (Internazionalizzazione)', link: `/it/guide/i18n` },
+              {
+                text: 'Moduli',
+                collapsed: true,
+                items: [
+                  { text: 'Panoramica', link: `/it/guide/modules` },
+                  { text: 'i18n (Internazionalizzazione)', link: `/it/guide/modules/i18n` }
+                  // ...altri moduli
+                ]
+              },
               { text: 'Helper', link: `/it/guide/helpers` },
               { text: 'API', link: `/it/guide/api` },
               { text: 'Community', link: `/it/guide/community` },
