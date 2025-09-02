@@ -389,6 +389,105 @@ async onInit(): Promise<void> {
 }
 ```
 
+## Ottimizzazioni e Performance
+
+### Configurazione Ottimizzazioni
+
+KIMU-Core include ottimizzazioni sicure per migliorare performance e affidabilità senza aumentare la complessità.
+
+#### `configureOptimizations(settings): void` (Statico)
+
+Configura le ottimizzazioni globali per tutti i componenti.
+
+**Parametri:**
+- `settings: object` - Impostazioni di ottimizzazione
+
+**Opzioni disponibili:**
+```typescript
+KimuComponentElement.configureOptimizations({
+    enableTemplateCache: true,      // Cache template compilati (default: true)
+    enableFileCache: true,          // Cache file caricati (default: true)
+    enableRenderDebouncing: true,   // Debouncing render (default: true)
+    enableErrorBoundaries: true,    // Isolamento errori (default: true)
+    cacheMaxSize: 50,              // Limite cache template (default: 50)
+    enableAssetPreloading: false   // Precaricamento asset (default: false)
+});
+```
+
+### Error Boundaries
+
+I componenti hanno isolamento automatico degli errori per prevenire crash a cascata.
+
+#### `onError(error: Error): void` (Opzionale)
+
+Hook per gestione personalizzata degli errori di rendering.
+
+```typescript
+export class MyComponent extends KimuComponentElement {
+    // Gestione errori personalizzata
+    onError(error: Error): void {
+        console.error(`Errore in ${this.tagName}:`, error);
+        
+        // Report errore a servizio di analisi
+        this.reportError(error);
+        
+        // Notifica utente (UI fallback viene mostrata automaticamente)
+        this.showUserNotification('Componente temporaneamente non disponibile');
+    }
+    
+    private reportError(error: Error) {
+        // Invio errore a servizio di logging
+        fetch('/api/errors', {
+            method: 'POST',
+            body: JSON.stringify({
+                component: this.tagName,
+                error: error.message,
+                stack: error.stack
+            })
+        });
+    }
+}
+```
+
+### Preloading Asset
+
+Migliorare le performance precaricando asset critici.
+
+#### `preloadAssets(paths: string[]): Promise<void>` (Statico)
+
+Precarica asset per migliorare performance percepite.
+
+```typescript
+// Durante l'inizializzazione dell'app
+await KimuComponentElement.preloadAssets([
+    'extensions/dashboard/view.html',
+    'extensions/dashboard/style.css',
+    'extensions/sidebar/view.html',
+    'assets/theme.css'
+]);
+```
+
+### Debug e Monitoring
+
+#### `getOptimizationSettings(): object` (Statico)
+
+Restituisce le impostazioni correnti di ottimizzazione per debugging.
+
+```typescript
+// Verifica configurazione
+console.log('Ottimizzazioni attive:', 
+    KimuComponentElement.getOptimizationSettings());
+```
+
+#### `forceRefresh(): Promise<void>`
+
+Forza un refresh immediato saltando ottimizzazioni (utile per debugging).
+
+```typescript
+// Debug: refresh forzato
+await this.forceRefresh();
+```
+
 ## Vedi Anche
 
 - **[@KimuComponent](../decorators/kimu-component.md)** - Decorator per registrazione

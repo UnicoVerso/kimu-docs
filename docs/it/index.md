@@ -46,6 +46,9 @@ features:
   - icon: "<span style='font-size:3rem;display:flex;justify-content:center;'>🔒</span>"
     title: Aperto & Sicuro by Design
     details: Open source, privacy-friendly e progettato per moduli UI sicuri e isolati.
+  - icon: "<span style='font-size:3rem;display:flex;justify-content:center;'>⚡</span>"
+    title: Ottimizzazioni Sicure Integrate
+    details: Error boundaries, cache intelligente LRU e preloading asset. Performance affidabili senza complessità aggiunta.
   - icon: "<span style='font-size:3rem;display:flex;justify-content:center;'>🌍</span>"
     title: Pronto per l'Internazionalizzazione
     details: Facilmente adattabile a progetti multilingua e pubblici globali.

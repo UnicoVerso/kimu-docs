@@ -363,6 +363,110 @@ static async loadComponentLazy(tag: string): Promise<void> {
 }
 ```
 
+## Optimizations and Cache Management
+
+### Template Cache Management
+
+KimuEngine includes an intelligent cache system with memory management.
+
+#### `configureCaching(maxSize: number): void` (Static)
+
+Configure template cache settings.
+
+**Parameters:**
+- `maxSize: number` - Maximum cache size (default: 50)
+
+**Example:**
+```typescript
+// Cache configuration for large apps
+KimuEngine.configureCaching(100);
+
+// Conservative configuration for low-memory devices
+KimuEngine.configureCaching(25);
+```
+
+#### `clearCaches(): void` (Static)
+
+Clear all caches (useful for debugging and testing).
+
+```typescript
+// Clear caches for testing
+KimuEngine.clearCaches();
+
+// After template updates
+if (developmentMode) {
+    KimuEngine.clearCaches();
+}
+```
+
+### Advanced Asset Preloading
+
+#### `preloadAssets(paths: string[]): Promise<void>` (Static)
+
+Preload assets in batches to improve performance.
+
+**Features:**
+- Batch loading with concurrency control (5 assets at a time)
+- Graceful error handling for missing assets
+- Support for templates (.html), styles (.css), and generic assets
+
+**Example:**
+```typescript
+// Preload critical assets
+await KimuEngine.preloadAssets([
+    'extensions/dashboard/view.html',
+    'extensions/dashboard/style.css',
+    'extensions/sidebar/view.html',
+    'extensions/navigation/style.css',
+    'assets/icons.css',
+    'assets/theme.css'
+]);
+
+// Conditional preloading
+if (userPreferences.preloadEnabled) {
+    const criticalAssets = getCriticalAssetsForUser();
+    await KimuEngine.preloadAssets(criticalAssets);
+}
+```
+
+### LRU (Least Recently Used) Cache
+
+The cache system uses LRU algorithm for automatic memory management:
+
+```typescript
+// Internal cache with access tracking
+// - Automatic removal of least used entries
+// - Evicts 20% when limit is reached
+// - Timestamp tracking for LRU algorithm
+
+// Cache monitoring (automatic console.log)
+// "[KimuEngine] Evicted X old template cache entries"
+```
+
+### Performance Monitoring
+
+```typescript
+class PerformanceMonitor {
+    static measureTemplateLoad(path: string) {
+        const start = performance.now();
+        
+        return KimuEngine.loadTemplate(path).then(result => {
+            const duration = performance.now() - start;
+            console.log(`Template ${path} loaded in ${duration.toFixed(2)}ms`);
+            return result;
+        });
+    }
+    
+    static async benchmarkPreloading(assets: string[]) {
+        const start = performance.now();
+        await KimuEngine.preloadAssets(assets);
+        const duration = performance.now() - start;
+        
+        console.log(`Preloaded ${assets.length} assets in ${duration.toFixed(2)}ms`);
+    }
+}
+```
+
 ## See Also
 
 - **[KimuRender](./kimu-render.md)** - Lit rendering system

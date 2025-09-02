@@ -46,6 +46,9 @@ features:
   - icon: "<span style='font-size:3rem;display:flex;justify-content:center;'>🔒</span>"
     title: Open & Secure by Design
     details: Open source, privacy-friendly, and designed for secure, isolated UI modules.
+  - icon: "<span style='font-size:3rem;display:flex;justify-content:center;'>⚡</span>"
+    title: Built-in Safe Optimizations
+    details: Error boundaries, intelligent LRU cache, and asset preloading. Reliable performance without added complexity.
   - icon: "<span style='font-size:3rem;display:flex;justify-content:center;'>🌍</span>"
     title: Ready for Internationalization
     details: Easily adaptable for multilingual projects and global audiences.
