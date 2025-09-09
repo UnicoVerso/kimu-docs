@@ -1,4 +1,4 @@
-# KimuComponent Decorator
+# @KimuComponent Decorator
 
 The main decorator for registering and configuring Web Components in the KIMU framework. It provides a declarative way to define component metadata and automatically registers components with the custom elements registry.
 
@@ -129,14 +129,48 @@ Default HTML template for the component.
 ```
 
 #### `dependencies`
-Other components or extensions this component depends on.
 
+List of child extensions (HTML tags) that will be automatically loaded and made available as custom tags in the parent extension's HTML template.
+
+**How it works:**
+- If your extension is a "parent" and contains other extensions as components, specify their tags in the `dependencies` field.
+- Child extensions will be automatically loaded and made available in the `view.html` template.
+- You can use child extensions as regular HTML tags inside your template.
+
+**Practical example:**
 ```typescript
 @KimuComponent({
-  tag: 'complex-form',
-  dependencies: ['ui-button', 'ui-input', 'validation-helper']
+        tag: 'dashboard-parent',
+        name: 'Complete Dashboard',
+        version: '1.0.0',
+        dependencies: ['chart-widget', 'data-table', 'filter-panel'] // Child extensions
 })
+export class DashboardParent extends KimuComponentElement {
+        // Parent component logic
+}
 ```
+
+In the `view.html` template:
+```html
+<div class="dashboard">
+    <h2>Interactive Dashboard</h2>
+    <!-- Use child extensions as HTML tags -->
+    <chart-widget data="${chartData}"></chart-widget>
+    <data-table items="${tableItems}"></data-table>
+    <filter-panel @filter="${onFilter}"></filter-panel>
+</div>
+```
+
+**Advantages:**
+- Modularity: each component is independent
+- Reusability: child extensions can be used in other contexts
+- Maintainability: separate updates for each module
+- Automatic loading: you don't have to manually manage dependencies
+
+**Best practices:**
+- Include only the dependencies you really need
+- Always document the role of each child extension
+- Use descriptive tag names for dependencies
 
 #### `observedAttributes`
 Attributes that should trigger `attributeChangedCallback`.

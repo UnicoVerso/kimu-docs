@@ -24,7 +24,8 @@ Il decorator è il cuore della configurazione. Definisce tutti i metadati dell'e
   author: 'Sviluppatore',      // Autore o team
   path: 'my-extension',        // Path cartella (default: tag)
   internal: false,             // true = sistema, false = utente
-  kimuVersion: '1.0.0'        // Versione KIMU richiesta
+  kimuVersion: '1.0.0',       // Versione KIMU richiesta
+  dependencies: ['child-ext-1', 'child-ext-2'] // Tag delle estensioni figlie
 })
 ```
 
@@ -41,6 +42,53 @@ Il decorator è il cuore della configurazione. Definisce tutti i metadati dell'e
 | `path` | `string` | ❌ | Path della cartella (default: tag) |
 | `internal` | `boolean` | ❌ | Se `true`, nascosta agli utenti |
 | `kimuVersion` | `string` | ❌ | Versione minima di KIMU richiesta |
+| `dependencies` | `string[]` | ❌ | Array dei tag delle estensioni figlie |
+
+### 🔗 Metadata Dependencies
+
+Il metadata `dependencies` è fondamentale per gestire estensioni composte. È un array di stringhe che contiene i tag delle estensioni figlie contenute nell'estensione di riferimento.
+
+**Come funziona:**
+- Se la tua estensione è "padre" e contiene altre estensioni come componenti, specifica i loro tag nel campo `dependencies`
+- Le estensioni figlie verranno automaticamente caricate e rese disponibili nel template HTML `view.html`
+- Puoi utilizzare le estensioni figlie come normali tag HTML all'interno del tuo template
+
+**Esempio pratico:**
+```typescript
+@KimuComponent({
+  tag: 'dashboard-parent',
+  name: 'Dashboard Completa',
+  version: '1.0.0',
+  dependencies: ['chart-widget', 'data-table', 'filter-panel'] // Estensioni figlie
+})
+export class DashboardParent extends KimuComponentElement {
+  // La logica del componente padre
+}
+```
+
+Nel template `view.html`:
+```html
+<div class="dashboard">
+  <h2>Dashboard Interattiva</h2>
+  
+  <!-- Utilizzo delle estensioni figlie come tag HTML -->
+  <chart-widget data="${chartData}"></chart-widget>
+  <data-table items="${tableItems}"></data-table>
+  <filter-panel @filter="${onFilter}"></filter-panel>
+</div>
+```
+
+**Vantaggi:**
+- ✅ Modularietà: ogni componente è indipendente
+- ✅ Riutilizzo: le estensioni figlie possono essere usate in altri contesti
+- ✅ Manutenibilità: aggiornamenti separati per ogni modulo
+- ✅ Caricamento automatico: non devi gestire manualmente le dipendenze
+
+**Best practice:**
+- Includi solo le dipendenze effettivamente necessarie
+- Documenta sempre il ruolo di ogni estensione figlia
+- Usa nomi di tag descrittivi per le dipendenze
+| `dependencies` | `string[]` | ❌ | Array dei tag delle estensioni figlie |
 
 ## 2. 🎯 Classe Component: Logica e Stato
 

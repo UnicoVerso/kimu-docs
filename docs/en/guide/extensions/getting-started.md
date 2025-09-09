@@ -120,6 +120,51 @@ Now that you've created your first extension, you can:
 
 ## 🎉 Congratulations!
 
+
 You just created your first KIMU extension! 🚀
 
 The next step is to explore the [detailed anatomy](./anatomy.md) to better understand each component.
+
+---
+
+## 🔗 Including Child Extensions (Composite Extensions)
+
+If you want your "parent" extension to include and use other extensions as components, you can leverage the `dependencies` metadata in the `@KimuComponent` decorator.
+
+**How it works:**
+- In the `dependencies` field, add the HTML tags of the child extensions you want to include.
+- These extensions will be automatically loaded and available in the HTML template as custom tags.
+
+**Practical example:**
+```typescript
+@KimuComponent({
+  tag: 'dashboard-parent',
+  name: 'Complete Dashboard',
+  version: '1.0.0',
+  dependencies: ['chart-widget', 'data-table', 'filter-panel'] // Child extensions
+})
+export class DashboardParent extends KimuComponentElement {
+  // Parent component logic
+}
+```
+
+In the `view.html` template:
+```html
+<div class="dashboard">
+  <h2>Interactive Dashboard</h2>
+  <!-- Use child extensions as HTML tags -->
+  <chart-widget data="${chartData}"></chart-widget>
+  <data-table items="${tableItems}"></data-table>
+  <filter-panel @filter="${onFilter}"></filter-panel>
+</div>
+```
+
+**Advantages:**
+- Modularity and reusability
+- Separate updates for each module
+- Automatic loading of dependencies
+
+**Best practices:**
+- Include only necessary dependencies
+- Always document the role of each child extension
+- Use descriptive tag names for dependencies

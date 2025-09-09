@@ -331,6 +331,45 @@ export class WeatherWidget extends KimuComponentElement {
 
 ## 📚 Prossimi Passi
 
-- **[Comunicazione](./communication.md)** - Far comunicare le estensioni
-- **[Template Avanzati](./templates.md)** - UI complesse e dinamiche
-- **[Ciclo di Vita](./lifecycle.md)** - Gestione avanzata del lifecycle
+---
+
+## 🔗 Pattern: Estensione Composita (Padre con Estensioni Figlie)
+
+Se vuoi creare un'estensione che includa altre estensioni come componenti, usa il metadata `dependencies` nel decorator `@KimuComponent`.
+
+**Come funziona:**
+- Nel campo `dependencies` inserisci i tag HTML delle estensioni figlie.
+- Queste verranno caricate automaticamente e saranno disponibili nel template HTML come tag custom.
+
+**Esempio pratico:**
+```typescript
+@KimuComponent({
+  tag: 'dashboard-parent',
+  name: 'Dashboard Completa',
+  version: '1.0.0',
+  dependencies: ['chart-widget', 'data-table', 'filter-panel']
+})
+export class DashboardParent extends KimuComponentElement {
+  // Logica del componente padre
+}
+```
+
+Nel template `view.html`:
+```html
+<div class="dashboard">
+  <h2>Dashboard Interattiva</h2>
+  <chart-widget data="${chartData}"></chart-widget>
+  <data-table items="${tableItems}"></data-table>
+  <filter-panel @filter="${onFilter}"></filter-panel>
+</div>
+```
+
+**Vantaggi:**
+- Modularità e riutilizzo
+- Aggiornamenti separati per ogni modulo
+- Caricamento automatico delle dipendenze
+
+**Best practice:**
+- Includi solo le dipendenze effettivamente necessarie
+- Documenta sempre il ruolo di ogni estensione figlia
+- Usa nomi di tag descrittivi per le dipendenze

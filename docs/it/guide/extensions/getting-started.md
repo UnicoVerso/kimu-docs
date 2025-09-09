@@ -120,6 +120,51 @@ Ora che hai creato la tua prima estensione, puoi:
 
 ## 🎉 Congratulazioni!
 
+
 Hai appena creato la tua prima estensione KIMU! 🚀
 
 Il prossimo passo è esplorare l'[anatomia dettagliata](./anatomy.md) per capire meglio ogni componente.
+
+---
+
+## 🔗 Inclusione di Estensioni Figlie (Composite Extensions)
+
+Se vuoi che la tua estensione "padre" includa e utilizzi altre estensioni come componenti, puoi sfruttare il metadata `dependencies` nel decorator `@KimuComponent`.
+
+**Come funziona:**
+- Nel campo `dependencies` inserisci i tag HTML delle estensioni figlie che vuoi includere.
+- Queste estensioni verranno caricate automaticamente e saranno disponibili nel template HTML come tag custom.
+
+**Esempio pratico:**
+```typescript
+@KimuComponent({
+  tag: 'dashboard-parent',
+  name: 'Dashboard Completa',
+  version: '1.0.0',
+  dependencies: ['chart-widget', 'data-table', 'filter-panel'] // Estensioni figlie
+})
+export class DashboardParent extends KimuComponentElement {
+  // Logica del componente padre
+}
+```
+
+Nel template `view.html`:
+```html
+<div class="dashboard">
+  <h2>Dashboard Interattiva</h2>
+  <!-- Utilizzo delle estensioni figlie come tag HTML -->
+  <chart-widget data="${chartData}"></chart-widget>
+  <data-table items="${tableItems}"></data-table>
+  <filter-panel @filter="${onFilter}"></filter-panel>
+</div>
+```
+
+**Vantaggi:**
+- Modularità e riutilizzo
+- Aggiornamenti separati per ogni modulo
+- Caricamento automatico delle dipendenze
+
+**Best practice:**
+- Includi solo le dipendenze effettivamente necessarie
+- Documenta sempre il ruolo di ogni estensione figlia
+- Usa nomi di tag descrittivi per le dipendenze
