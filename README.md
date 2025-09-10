@@ -25,8 +25,10 @@ Created and maintained by Marco Di Pasquale and the collective **UnicòVerso**.
 
 - [UnicòVerso Website](https://unicoverso.com)
 - [KIMU Project Page](https://unicoverso.com/kimu)
+- [KIMU docs online](https://unicoverso.com/kimu/docs)
 - [GitHub: KIMU](https://github.com/UnicoVerso/kimu)
 - [GitHub: KIMU-Core](https://github.com/UnicoVerso/kimu-core)
+- [GitHub: KIMU-docs](https://github.com/UnicoVerso/kimu-docs)
 - [GitHub: UnicòVerso](https://github.com/UnicoVerso)
 - [LinkedIn](https://www.linkedin.com/company/unicoverso)
 
