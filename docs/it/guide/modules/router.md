@@ -165,8 +165,3 @@ Il router si adatta automaticamente al base path configurato nell'applicazione. 
 - Integrazione nativa con le estensioni KIMU
 - Gestione avanzata di routing e parametri
 
-## Risorse utili
-- [Esempio di utilizzo del router](../examples/router-example.md)
-- [Documentazione API KimuRouterService](../../framework/modules/router)
-- [Best Practice e Pattern](../../framework/extensions/best-practices.md)
-- [Guida ai comandi di build e script](../../framework/extensions/build-deployment.md)

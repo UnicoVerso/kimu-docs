@@ -517,4 +517,4 @@ Now that you understand the complete anatomy, explore:
 - **[Advanced Templates](./templates.md)** - Advanced templating techniques and optimizations
 - **[Lifecycle Management](./lifecycle.md)** - In-depth component lifecycle and state management
 - **[Component Communication](./communication.md)** - How components interact with each other
-- **[Testing Extensions](./testing.md)** - Testing strategies and best practices
+

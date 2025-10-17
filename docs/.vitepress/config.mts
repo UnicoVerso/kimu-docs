@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitepress'
+
+// @ts-ignore
 import markdownItTaskLists from 'markdown-it-task-lists';
+
 import { version } from './version'
 
 // https://vitepress.dev/reference/site-config
@@ -110,7 +113,8 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: 'Overview', link: `/en/guide/modules` },
-                  { text: 'i18n (Internationalization)', link: `/en/guide/modules/i18n` }
+                  { text: 'i18n (Internationalization)', link: `/en/guide/modules/i18n` },
+                  { text: 'router (Routing)', link: `/en/guide/modules/router` }
                   // ...other modules
                 ]
               },
@@ -253,7 +257,8 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: 'Panoramica', link: `/it/guide/modules` },
-                  { text: 'i18n (Internazionalizzazione)', link: `/it/guide/modules/i18n` }
+                  { text: 'i18n (Internazionalizzazione)', link: `/it/guide/modules/i18n` },
+                  { text: 'router (Routing)', link: `/it/guide/modules/router` }
                   // ...altri moduli
                 ]
               },

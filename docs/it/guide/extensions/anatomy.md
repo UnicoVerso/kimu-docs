@@ -235,3 +235,4 @@ Ora che conosci l'anatomia di base, esplora:
 - **[Pattern di Sviluppo](./patterns.md)** - Pattern comuni per diversi tipi di estensioni
 - **[Template Avanzati](./templates.md)** - Tecniche avanzate per l'interfaccia
 - **[Ciclo di Vita](./lifecycle.md)** - Gestione approfondita del lifecycle
+- **[Comunicazione tra Estensioni](./communication.md)** - Strategie per la comunicazione tra estensioni
