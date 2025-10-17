@@ -115,3 +115,214 @@ src/
 - **Servizio**: classe/funzione con responsabilità unica.
 - **Provider**: fornitore di dati o risorse.
 - **Helper**: funzione di supporto.
+
+---
+
+# Gestione Modulare Avanzata in KIMU-Core
+
+## Sistema di Gestione Moduli
+
+KIMU-Core adotta un sistema avanzato per la gestione dei moduli opzionali tramite repository centrale, scripts automatici e manifest dedicato. Questo permette di installare/rimuovere moduli senza modificare il core e di mantenere la build leggera e personalizzata.
+
+### Struttura delle Directory
+
+```
+kimu-core/
+├── src/
+│   ├── modules/                  # Moduli attivi (inclusi nella build)
+│   │   ├── modules-manifest.json # Elenco moduli installati
+│   │   ├── i18n/                 # Modulo i18n (installato di default)
+│   │   └── .gitkeep
+│   └── modules-repository/       # Repository moduli disponibili (NON in build)
+│       ├── router/               # Modulo router disponibile
+│       │   ├── module.ts
+│       │   ├── router.ts
+│       │   ├── manifest.json
+│       │   └── README.md
+│       └── ...                   # Altri moduli futuri
+└── scripts/
+    ├── install-module.js         # Script installazione moduli
+    ├── remove-module.js          # Script rimozione moduli
+    └── list-modules.js           # Script lista moduli
+```
+
+### Comandi Principali
+
+- `npm run list:modules` — Mostra moduli installati e disponibili
+- `npm run install:module <nome>` — Installa un modulo dal repository
+- `npm run remove:module <nome>` — Rimuove un modulo installato
+
+### Come Funziona
+
+- **Installazione:**
+  1. Il modulo viene copiato da `modules-repository/<nome>` a `modules/<nome>`
+  2. Aggiornamento di `modules-manifest.json`
+  3. Il modulo sarà incluso nella prossima build
+
+- **Rimozione:**
+  1. La cartella del modulo viene eliminata da `modules/<nome>`
+  2. Aggiornamento di `modules-manifest.json`
+  3. Il modulo resta disponibile nel repository per future installazioni
+
+### Esempio Manifest Centrale
+
+```json
+{
+  "installedModules": [
+    {
+      "name": "i18n",
+      "version": "1.0.0",
+      "path": "i18n",
+      "installedAt": "2025-01-17T00:00:00.000Z"
+    },
+    {
+      "name": "router",
+      "version": "1.0.0",
+      "path": "router",
+      "installedAt": "2025-10-17T20:20:55.120Z"
+    }
+  ],
+  "availableModules": [],
+  "lastUpdate": "2025-10-17T20:20:55.120Z"
+}
+```
+
+## Manifest del Modulo
+
+Il manifest di un modulo KIMU è un file `manifest.json` che descrive tutte le informazioni essenziali per la gestione, installazione e compatibilità del modulo. È fondamentale per il funzionamento degli script di installazione/rimozione e per la corretta inclusione nella build.
+
+### Struttura e Campi del Manifest
+
+Esempio generico:
+```json
+{
+  "name": "nome-modulo",
+  "version": "1.0.0",
+  "description": "Descrizione dettagliata del modulo",
+  "author": "Autore o team",
+  "license": "MPL-2.0",
+  "dependencies": [],
+  "kimuCoreVersion": "^0.3.0",
+  "keywords": ["parole", "chiave", "modulo"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UnicoVerso/kimu-core",
+    "directory": "src/modules/nome-modulo"
+  }
+}
+```
+
+#### Campi obbligatori
+- `name`: Nome univoco del modulo (es. "i18n", "router")
+- `version`: Versione semantica del modulo (es. "1.0.0")
+- `description`: Breve descrizione della funzionalità
+- `author`: Autore o team di sviluppo
+- `license`: Licenza del modulo (es. "MPL-2.0")
+- `dependencies`: Array di nomi di altri moduli richiesti (può essere vuoto)
+- `kimuCoreVersion`: Versione minima di kimu-core compatibile
+
+#### Campi opzionali
+- `keywords`: Parole chiave per ricerca e categorizzazione
+- `repository`: Informazioni sul repository GitHub o altro VCS
+
+### Esempio Manifest i18n
+```json
+{
+  "name": "i18n",
+  "version": "1.0.0",
+  "description": "Internationalization module for KIMU applications with multi-language support and dynamic translation system",
+  "author": "KIMU Team",
+  "license": "MPL-2.0",
+  "dependencies": [],
+  "kimuCoreVersion": "^0.3.0",
+  "keywords": ["i18n", "internationalization", "localization", "translation", "multilingual", "language"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UnicoVerso/kimu-core",
+    "directory": "src/modules/i18n"
+  }
+}
+```
+
+### Utilizzo del Manifest
+- Gli script di installazione/rimozione leggono il manifest per verificare compatibilità, dipendenze e informazioni da mostrare all’utente.
+- Il manifest viene usato per aggiornare il manifest centrale (`modules-manifest.json`) dopo ogni installazione/rimozione.
+- I campi come `dependencies` e `kimuCoreVersion` permetteranno in futuro la risoluzione automatica delle dipendenze e il controllo delle versioni.
+
+### Best Practice per la Creazione
+- Compila sempre tutti i campi obbligatori.
+- Aggiorna la versione ad ogni modifica significativa del modulo.
+- Usa descrizioni chiare e parole chiave utili.
+- Documenta eventuali dipendenze da altri moduli.
+- Mantieni il manifest aggiornato e coerente con il codice del modulo.
+
+### Checklist Manifest
+- [x] Nome univoco
+- [x] Versione semantica
+- [x] Descrizione chiara
+- [x] Autore e licenza
+- [x] Dipendenze (se presenti)
+- [x] Versione minima di kimu-core
+- [x] Parole chiave e repository (opzionali)
+
+---
+
+### Best Practices
+
+- Non modificare mai `modules-repository/` direttamente
+- Installa solo i moduli necessari per ridurre la dimensione della build
+- Committa sempre `modules-manifest.json` per tracciare i moduli usati
+- Usa solo gli script forniti per installare/rimuovere moduli
+- Documenta le dipendenze nel manifest del modulo
+
+### Workflow Sviluppatore
+
+1. Crea nuovo modulo in `modules-repository/`
+2. Testa installazione con `npm run install:module <nome>`
+3. Sviluppa e testa
+4. Rimuovi con `npm run remove:module <nome>`
+5. Il modulo resta disponibile nel repository
+
+### Workflow Utilizzatore
+
+1. Vedi moduli disponibili con `npm run list:modules`
+2. Installa solo ciò che serve
+3. Build con solo i moduli installati
+
+### Vantaggi
+
+- Build più leggera e personalizzata
+- Moduli opzionali e facilmente gestibili
+- Repository centrale sempre integro
+- Sviluppo e test semplificati
+
+### Esempi di Utilizzo
+
+```bash
+# Progetto nuovo - solo core + i18n
+npm run build                    # ~50KB
+
+# Aggiungo router
+npm run install:module router
+npm run build                    # ~58KB
+
+# Rimuovo router
+npm run remove:module router
+npm run build                    # ~50KB
+```
+
+### FAQ Moduli
+
+- **Posso installare/rimuovere moduli senza toccare il core?** Sì, tutto avviene tramite scripts e repository.
+- **I moduli sono inclusi nella build solo se installati?** Sì, la build legge solo i moduli attivi.
+- **Posso creare moduli personalizzati?** Sì, basta seguire la struttura e aggiungere il manifest.
+
+---
+
+Per dettagli e guida completa consulta anche:
+- [docs/MODULE_MANAGEMENT.md] del progetto kimu-core
+- [src/modules/README.md] e [src/modules-repository/README.md] del progetto kimu-core
+
+---
+
+**Questa sezione è aggiornata con tutte le regole e workflow della gestione moduli KIMU-Core.**

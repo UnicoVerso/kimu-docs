@@ -251,7 +251,7 @@ Il file `extensions-manifest.json` si trova in `src/extensions/` e contiene un a
     "sounds/notification.mp3"
   ],
   "keywords": ["notifications", "alerts", "messages"],
-  "homepage": "https://docs.kimu.dev/extensions/notification-manager",
+  "homepage": "https://unicoverso/kimu/docs/extensions/notification-manager",
   "repository": "https://github.com/unicoverso/kimu-extensions",
   "license": "MPL-2.0"
 }
